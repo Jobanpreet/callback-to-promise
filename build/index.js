@@ -11,12 +11,32 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var errorTypes = {
     NOT_A_FUNCTION: "Passed arg is not a function",
 };
+var responseCreator = function (data) {
+    return { data: data };
+};
 var wrapperCallback = function (resolve, reject) {
-    return function (err, value) {
-        if (err) {
-            reject(err);
+    return function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
         }
-        resolve(value);
+        var length = args.length;
+        if (!length) {
+            resolve(responseCreator(null));
+        }
+        //Node: node js callback will have first args as err object.
+        if (args[0] && args[0].errno) {
+            reject(args[0]);
+        }
+        if (length === 1) {
+            resolve(responseCreator(args[0]));
+        }
+        //node callback will have first agrs as null iF there is no error.
+        if (args[0] === null || args[0] === undefined) {
+            var restArgs = args.slice(1);
+            resolve(responseCreator(restArgs.length === 1 ? restArgs[0] : restArgs));
+        }
+        resolve(responseCreator(args));
     };
 };
 var callbackToPromise = function (originalFunction) {
