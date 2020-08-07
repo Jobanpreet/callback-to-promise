@@ -6,10 +6,10 @@ This module converts callback-style APIs and return a new version that returns p
 
 ```
 const fs = require('fs');
-const callbackToPromise = require('j-j-callback-to-promise').default;
+const callbackToPromise = require('j-callback-to-promise').default;
       or
 import fs from 'fs';
-import callbackToPromise from 'j-j-callback-to-promise';
+import callbackToPromise from 'j-callback-to-promise';
 
 const promise = callbackToPromise(fs.readFile);
 const {data} = await promise("<filePath>", "<encoding>");
