@@ -1,0 +1,27 @@
+{
+  "name": "callback-to-promise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "babel src/index.js -o dist/index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jobanpreet/callback-to-promise.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jobanpreet/callback-to-promise/issues"
+  },
+  "homepage": "https://github.com/Jobanpreet/callback-to-promise#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.1",
+    "@babel/plugin-transform-runtime": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "jest": "^26.2.2"
+  }
+}
