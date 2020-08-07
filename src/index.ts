@@ -1,10 +1,9 @@
-import fs from "fs";
 const errorTypes = {
   NOT_A_FUNCTION: "Passed arg is not a function",
 };
 
-const wrapperCallback = (resolve, reject) => {
-  return (err, value) => {
+const wrapperCallback = (resolve: Function, reject: Function) => {
+  return (err: any, value: any) => {
     if (err) {
       reject(err);
     }
@@ -12,12 +11,12 @@ const wrapperCallback = (resolve, reject) => {
   };
 };
 
-const callbackToPromise = (originalFunction) => {
+const callbackToPromise = (originalFunction: Function): Function => {
   if (typeof originalFunction !== "function") {
     throw new Error(errorTypes["NOT_A_FUNCTION"]);
   }
 
-  return (...args) => {
+  return (...args: Array<any>) => {
     return new Promise((resolve, reject) => {
       const callback = wrapperCallback(resolve, reject);
       args.push(callback);
@@ -25,14 +24,5 @@ const callbackToPromise = (originalFunction) => {
     });
   };
 };
-
-const promise = callbackToPromise(fs.readFile);
-promise("./src/abc.txt", "utf8")
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((err) => {
-    console.log(err, "err");
-  });
 
 export default callbackToPromise;

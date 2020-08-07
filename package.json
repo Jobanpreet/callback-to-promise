@@ -2,10 +2,11 @@
   "name": "callback-to-promise",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./build/index.js",
   "scripts": {
     "dev": "babel src/index.js -o dist/index.js",
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc -p ."
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "@babel/core": "^7.11.1",
     "@babel/plugin-transform-runtime": "^7.11.0",
     "@babel/preset-env": "^7.11.0",
-    "jest": "^26.2.2"
+    "jest": "^26.2.2",
+    "typescript": "^3.9.7"
   }
 }
