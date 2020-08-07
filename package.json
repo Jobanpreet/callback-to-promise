@@ -1,5 +1,5 @@
 {
-  "name": "callback-to-promise",
+  "name": "j-callback-to-promise",
   "version": "1.0.0",
   "description": "",
   "main": "./build/index.js",

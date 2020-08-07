@@ -6,7 +6,7 @@ This module converts callback-style APIs and return a new version that returns p
 
 ```
 const fs = require('fs');
-const callbackToPromise = require('callback-to-promise');
+const callbackToPromise = require('callback-to-promise').default;
       or
 import fs from 'fs';
 import callbackToPromise from 'callback-to-promise';
@@ -21,7 +21,7 @@ console.log(data) => //File content
 ### callback passing only one parameter
 
 ```
-const callbackToPromise = require('callback-to-promise');
+const callbackToPromise = require('callback-to-promise').default;
 
 // Convert this cllback based function to promise based.
 function getVal(name,  callback){
@@ -37,7 +37,7 @@ console.log(data); // output -> username
 ### callback passing multiple parameter
 
 ```
-const callbackToPromise = require('callback-to-promise');
+const callbackToPromise = require('callback-to-promise').default;
 
 // Convert this cllback based function to promise based.
 function getVal(name,  callback){
@@ -53,7 +53,7 @@ console.log(data); // output -> ['username', 'new dummy value']
 ### callback passing multiple parameter (first parament as null)
 
 ```
-const callbackToPromise = require('callback-to-promise');
+const callbackToPromise = require('callback-to-promise').default;
 
 // Convert this cllback based function to promise based.
 function getVal(name,  callback){
