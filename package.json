@@ -18,6 +18,13 @@
     "url": "https://github.com/Jobanpreet/callback-to-promise/issues"
   },
   "homepage": "https://github.com/Jobanpreet/callback-to-promise#readme",
+  "keywords": [
+    "callback",
+    "promise",
+    "async",
+    "await",
+    "typescript"
+  ],
   "devDependencies": {
     "@babel/cli": "^7.10.5",
     "@babel/core": "^7.11.1",
